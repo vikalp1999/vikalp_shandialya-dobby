@@ -42,29 +42,7 @@ export const authReducer = (state = initialState, { type, payload }) => {
         ErrorMsg: payload,
       };
     }
-    case REFRESH_TOKEN_ERROR: {
-      return {
-        ...state,
-        loading: false,
-        error: true,
-      };
-    }
-    case REFRESH_TOKEN_LOADING: {
-      return {
-        ...state,
-        loading: true,
-        error: false,
-      };
-    }
-    case REFRESH_TOKEN_SUCCESS: {
-      return {
-        ...state,
-        isAuth: payload,
-        isError: false,
-        userData: true,
-        ErrorMsg: '',
-      };
-    }
+   
     default: {
       return state;
     }
