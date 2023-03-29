@@ -2,6 +2,7 @@ import {
   AUTH_ERROR,
   AUTH_LOGIN_SUCCESS,
   AUTH_REGISTER_SUCCESS,
+  AUTH_LOGOUT
 } from './auth.type';
 
 const initialState = {
@@ -40,6 +41,15 @@ export const authReducer = (state = initialState, { type, payload }) => {
         isAuth: false,
         isError: true,
         ErrorMsg: payload,
+      };
+    }
+    case AUTH_LOGOUT: {
+      localStorage.removeItem("token");
+      return {
+        ...state,
+        isRegistered: false,
+        isAuth: false,
+        isError: false,
       };
     }
    
