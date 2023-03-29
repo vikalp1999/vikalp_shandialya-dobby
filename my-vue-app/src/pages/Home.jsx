@@ -48,12 +48,11 @@ const Home = () => {
  const token=localStorage.getItem("token")
  useEffect(()=>{
  getPicture(name)
- if(token==null){
-navigate("/login")
- }
- },[token])
+ 
+ },[])
  let getPicture=async(name)=>{
   let {messsage}= await dispatch(getProducts(user._id,name))
+  console.log('message',messsage)
   setPicture(messsage)
  }
 
@@ -79,7 +78,7 @@ navigate("/login")
  const handleClick=async()=>{
   console.log("ok")
   console.log(url)
-    const res= await axios.post(`http://localhost:8080/addPost/${user._id}`,{name,url})
+    const res= await axios.post(`https://dobby-yl84.onrender.com/addPost/${user._id}`,{name,url})
   console.log(res)
 
  }

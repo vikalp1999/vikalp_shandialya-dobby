@@ -26,18 +26,14 @@ import {
   AiFillBell,
 } from 'react-icons/ai';
 
-import { useNavigate} from 'react-router-dom';
+
 
 const Navbar = () => {
   const bg = useColorModeValue('white', 'gray.800');
   const mobileNav = useDisclosure();
-  const navigate=useNavigate()
+  
 
  const token=localStorage.getItem("token")
- 
- if(token==null){
-  navigate("/login")
- }
   
   const handleLogout=()=>{
     console.log("ok")
