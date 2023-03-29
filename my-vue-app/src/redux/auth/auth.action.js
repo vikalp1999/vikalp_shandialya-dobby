@@ -5,7 +5,7 @@ import {
   AUTH_REGISTER_SUCCESS,
   AUTH_LOGOUT
 } from './auth.type';
-let API = 'http://localhost:8080';
+let API = 'https://dobby-yl84.onrender.com';
 export const registerUser = (creds) => async (dispatch) => {
   try {
     const res = await axios.post(`${API}/signup`, creds);

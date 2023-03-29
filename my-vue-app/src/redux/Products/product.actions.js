@@ -5,7 +5,7 @@ import {
   GET_PRODUCT_SUCCESS,
   GET_PRODUCT_ERROR,
 } from './product.type';
-let API = 'http://localhost:8080/getPost';
+let API = 'https://dobby-yl84.onrender.com/getPost';
 export const getProducts = (id,name) => async (dispatch, state) => {
   dispatch({ type: GET_PRODUCT_LOADING });
   try {
