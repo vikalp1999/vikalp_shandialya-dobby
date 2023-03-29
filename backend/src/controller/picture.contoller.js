@@ -23,13 +23,28 @@ exports.postPicture=async(req,res)=>{
   }
 }
 
-exports.getItem=async(req,res)=>{
+exports.getPicture=async(req,res)=>{
     let userId=req.params.id;
+    console.log(userId)
   try{
-     const data= await Picture.find({userId});
+     const data= await Picture.find({userId:userId});
      return res.status(203).send(data)
   }
   catch(e){
-
+  console.log(e.message)
   }
+}
+exports.searchPicture=async(req,res)=>{
+  let {name}=req.body;
+  let userId=req.params.id;
+  console.log(userId,name)
+  try{
+    const data= await Picture.find({userId:userId,name: { $regex: name}})
+    console.log("data",data)
+    res.status(201).send({messsage:data})
+  }
+  catch(e){
+  console.log(e.message)
+  }
+
 }
